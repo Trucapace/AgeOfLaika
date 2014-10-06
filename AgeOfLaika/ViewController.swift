@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ageInDogYearsLabel: UILabel!
+    @IBOutlet weak var ageInHumanYearsTextFiels: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func convertToDogYearsButtonPressed(sender: UIButton) {
+    
+        let ageInHumanYears = ageInHumanYearsTextFiels.text.toInt()!
+//        let ageInDogYears = ageInHumanYears * 7
+//        if ageInHumanYears <= 2 then let ageInDogYears = ageInHumanYears * 10
+//        else let ageInDogYears = 20 + (ageInHumanYears - 2) * 4
+        
+        var ageInDogYears:Int
+        if ageInHumanYears <= 2 {
+            ageInDogYears = ageInHumanYears * 10
+        }
+        else {
+            ageInDogYears = 20 + (ageInHumanYears - 2) * 4
+        }
+        
+        
+        ageInDogYearsLabel.hidden = false
+        ageInDogYearsLabel.text = "\(ageInDogYears)"
+        ageInHumanYearsTextFiels.text = ""
+        ageInHumanYearsTextFiels.resignFirstResponder()
+        
+        
+    }
 
 }
 
