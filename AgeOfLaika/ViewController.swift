@@ -28,9 +28,6 @@ class ViewController: UIViewController {
     @IBAction func convertToDogYearsButtonPressed(sender: UIButton) {
     
         let ageInHumanYears = ageInHumanYearsTextFiels.text.toInt()!
-//        let ageInDogYears = ageInHumanYears * 7
-//        if ageInHumanYears <= 2 then let ageInDogYears = ageInHumanYears * 10
-//        else let ageInDogYears = 20 + (ageInHumanYears - 2) * 4
         
         var ageInDogYears:Int
         if ageInHumanYears <= 2 {
@@ -42,7 +39,7 @@ class ViewController: UIViewController {
         
         
         ageInDogYearsLabel.hidden = false
-        ageInDogYearsLabel.text = "\(ageInDogYears)"
+        ageInDogYearsLabel.text = "\(ageInDogYears)" + " Human Years"
         ageInHumanYearsTextFiels.text = ""
         ageInHumanYearsTextFiels.resignFirstResponder()
         
